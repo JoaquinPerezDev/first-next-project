@@ -41,16 +41,17 @@ export async function getStaticProps(context) {
 		props: {
 			selectedEvent: event,
 		},
+		revalidate: 30,
 	};
 }
 
 export async function getStaticPaths() {
 	const events = await getAllEvents();
 
-	const paths = events.map(event => ({ params: { eventId: event.id } }))
+	const paths = events.map((event) => ({ params: { eventId: event.id } }));
 	return {
 		paths: paths,
-		fallback: false
+		fallback: false,
 	};
 }
 export default EventDetailsPage;
