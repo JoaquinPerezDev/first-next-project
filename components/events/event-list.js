@@ -24,4 +24,25 @@ function EventList(props) {
 	);
 }
 
+// export async function getStatisProps() {
+// 	const res = await fetch(
+// 		'https://client-side-fe-default-rtdb.firebaseio.com/events'
+// 	);
+// 	const data = await res.json();
+
+// 	const fetchedEvents = [];
+
+// 	for (const key in data) {
+// 		fetchedEvents.push({
+// 			id: key,
+// 			title: data[key].title,
+// 			description: data[key].description,
+// 			address: data[key].address,
+// 			date: data[key].date,
+// 			isFeatured: data[key].isFeatured,
+// 		});
+// 	}
+// 	return { props: { events: fetchedEvents }, revalidate: 10 };
+// }
+
 export default EventList;
